@@ -1,0 +1,207 @@
+@font-face {
+    font-family: Picasso;
+    src: url(./fonts/Pacifico-Regular.ttf);
+}
+
+@font-face {
+    font-family: Badscript;
+    src: url(./fonts/BadScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(./fonts/Ubuntu-Light.woff2);
+}
+
+
+
+.page{
+    display: flex;
+    justify-content: center;
+}
+
+.main{
+    max-width: 960px;
+    min-width: 320px;
+    min-height: 99vh;
+    background-color: #3ca081;
+    /* box-shadow: 15px 15px 15px black; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title{
+    color: #b1302b;
+    font-family: Picasso;
+    font-size: 56px;
+    text-decoration: underline;
+    line-height: 100px;
+    margin: 0;
+    margin-top: 40px;
+}
+
+
+
+.description{
+    margin: 0;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    color: #b1302b;
+    font-family: Ubuntu;
+    width: 80%;
+}
+
+.cards{
+   display: flex;
+   width: 100%;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.card{
+    width: 260px;
+    height: 500px;
+    /* background-image: url(./img/кекс.jpg); */
+    border-radius: 5px;
+    box-shadow: 15px 15px 15px #f5deb1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    background-size: cover;
+    transition: transform .2s linear .1s;
+}
+
+/* @keyframes move {
+  0%{
+    transform: scale(1);
+  }    
+   20%{
+    transform: scale(1.1);
+   }
+  21%{
+    transform: rotate(0);
+  }
+  50%{
+ transform: rotate(360deg);
+  }
+  90%{
+    transform: skew(10deg);
+  }
+  100%{
+    transform: scale(1);
+  }
+} */
+
+.card:hover{
+    animation: move 20s linear;
+    transform:scale(1.02);
+}
+
+/* .card:last-of-type{
+    margin: 20px;
+}
+
+.card:first-of-type{
+    margin: 20px;
+} */
+
+/* .card:nth-last-of-type(2n){
+ border: 1px solid red;
+} */
+
+/* .card:not( :first-of-type, :last-of-type){
+    margin: 20px;
+} */
+
+
+.cards_title{
+    font-family: Badscript;
+    color: #b1302b;
+    font-size: 25px;
+    margin-top: 35px;
+}
+
+.card_item1{
+    background-image: url(./img/кекс.jpg);
+}
+
+.card_item2{
+    background-image: url(./img/печенье.jpg);
+        background-position: -66px;
+}
+
+.card_item3{
+    background-image: url(./img/трюфель.jpg);
+        background-position: -87px;
+}
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .0.5s linear;
+}
+
+
+.popup_conteiner{
+    width: 520px;
+    height: 270px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+.popup_title{
+    font-family: Ubuntu;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.popup_text{
+    font-family: Ubuntu;
+    font-size: 15px;
+}
+
+.popup_button-exit{
+    position: absolute;
+    background-image: url(./img/CloseButoon.svg);
+    height: 32px;
+    width: 32px;
+    top: -31px;
+    right: -40px;
+}
+
+
+@media screen and (max-width: 865px) {
+    .popup_conteiner{
+        width: 270px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+ .title{
+  font-size: 35px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+       }
+}
+
+.popup_opened{
+    visibility: visible;
+    opacity: 1;
+}
